@@ -8,7 +8,6 @@ const Posts = () => {
 	console.log(posts);
 	return (
 		<>
-			<h1>{posts}</h1>
 			<h1>Posts</h1>
 			<Post />
 			<Post />
