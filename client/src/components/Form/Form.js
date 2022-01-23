@@ -114,30 +114,28 @@ const Form = ({ currentId, setCurrentId }) => {
 						}
 					/>
 				</div>
-				<Grid item xs={8} sm={8}>
-					<Button
-						className={classes.buttonSubmit}
-						variant="contained"
-						color="primary"
-						size="large"
-						type="submit"
-						fullWidth
-					>
-						Submit
-					</Button>
-				</Grid>
-				<Grid item xs={1} sm={2}></Grid>
-				<Grid item xs={2} sm={2}>
-					<Button
-						className={classes.buttonSubmit}
-						variant="contained"
-						color="secondary"
-						size="small"
-						onClick={clear}
-					>
-						Clear
-					</Button>
-				</Grid>
+
+				<Button
+					className={classes.buttonSubmit}
+					variant="contained"
+					color="primary"
+					size="large"
+					type="submit"
+					fullWidth
+				>
+					Submit
+				</Button>
+
+				<Button
+					className={classes.buttonSubmit}
+					variant="contained"
+					color="secondary"
+					size="small"
+					onClick={clear}
+					fullWidth
+				>
+					Clear
+				</Button>
 			</form>
 		</Paper>
 	);
