@@ -112,6 +112,7 @@ const Auth = () => {
 							<Input
 								name="confirmPassword"
 								label="Repeat Password"
+								type="password"
 								handleChange={handleChange}
 							/>
 						)}

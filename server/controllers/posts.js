@@ -64,12 +64,8 @@ export const likePost = async (req, res) => {
 		//dislike the post
 		post.likes = post.likes.filter((id) => id !== String(req.userId));
 	}
-	const updatedPost = await PostMessage.findByIdAndUpdate(
-		id,
-		{
-			post,
-		},
-		{ new: true }
-	);
+	const updatedPost = await PostMessage.findByIdAndUpdate(id, post, {
+		new: true,
+	});
 	res.json(updatedPost);
 };
