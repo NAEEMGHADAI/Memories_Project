@@ -40,7 +40,6 @@ const Auth = () => {
 		} else {
 			dispatch(signin(formData, navigate));
 		}
-		console.log(formData);
 	};
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -66,6 +65,7 @@ const Auth = () => {
 	const googleFailure = (error) => {
 		console.log(error);
 		console.log("Google Sign in was unsucessfull. Try Again Later");
+		alert("Google Sign in was unsucessfull. Try Again Later");
 	};
 
 	return (

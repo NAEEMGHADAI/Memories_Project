@@ -19,7 +19,7 @@ const Form = ({ currentId, setCurrentId }) => {
 	const post = useSelector((state) =>
 		currentId ? state.posts.find((post) => post._id === currentId) : null
 	);
-	console.log(post);
+
 	const classes = useStyles();
 	const dispatch = useDispatch();
 	const user = JSON.parse(localStorage.getItem("profile"));
@@ -38,12 +38,10 @@ const Form = ({ currentId, setCurrentId }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (currentId) {
-			console.log("update");
 			dispatch(
 				updatePost(currentId, { ...postData, name: user?.result?.name })
 			);
 		} else {
-			console.log(postData);
 			dispatch(createPost({ ...postData, name: user?.result?.name }));
 		}
 		clear();

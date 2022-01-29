@@ -12,7 +12,6 @@ const Navbar = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	console.log("user", user);
 	const logout = () => {
 		dispatch({ type: "LOGOUT" });
 		navigate("/");

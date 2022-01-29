@@ -97,9 +97,7 @@ const Post = ({ post, setCurrentId }) => {
 				>
 					<Likes />
 				</Button>
-				{console.log("google", user?.result)}
-				{console.log("user", user?.result?._id)}
-				{console.log("creator", post?.creator)}
+
 				{(user?.result?.googleId === post?.creator ||
 					user?.result?._id === post?.creator) && (
 					<Button
