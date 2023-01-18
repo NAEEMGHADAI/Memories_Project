@@ -1,22 +1,22 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "https://nmemories-app.herokuapp.com" });
+const API = axios.create({ baseURL: "https://nmemory-server.onrender.com" });
 
 API.interceptors.request.use((req) => {
-	if (localStorage.getItem("profile")) {
-		req.headers.Authorization = `Bearer ${
-			JSON.parse(localStorage.getItem("profile")).token
-		}`;
-	}
+  if (localStorage.getItem("profile")) {
+    req.headers.Authorization = `Bearer ${
+      JSON.parse(localStorage.getItem("profile")).token
+    }`;
+  }
 
-	return req;
+  return req;
 });
 
 export const fetchPosts = () => API.get("/posts");
 export const createPost = (newPost) => API.post("/posts", newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) =>
-	API.patch(`/posts/${id}`, updatedPost);
+  API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);
 
 export const signIn = (formData) => API.post("/user/signin", formData);
